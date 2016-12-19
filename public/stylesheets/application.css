@@ -75,6 +75,7 @@ input.text {
   padding: 5px 10px 5px 10px;
   margin: 10px;
   font-size: 20px;
+  text-align: center;
 }
 
 input.text:focus {
@@ -114,8 +115,4 @@ td:first-child {
 
 tr {
   text-align: center;
-}
-
-img {
-  height: 23px;
 }

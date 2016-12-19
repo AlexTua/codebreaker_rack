@@ -1,6 +1,6 @@
 require 'erb'
-require './lib/game.rb'
 require 'yaml'
+require 'codebreaker'
 
 class Racker
   def self.call(env)

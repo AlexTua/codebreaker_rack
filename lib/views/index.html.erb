@@ -31,8 +31,7 @@
           </form>
           <% if @request.session['hint'].nil? %>
             <form method="post" action="/hint">
-              <button type="submit" value="Hint" class="btn">Hint <img src="stylesheets/1.png" style="vertical-align:middle"> 
-              </button>
+              <button type="submit" value="Hint" class="btn">Hint</button>
             </form>
           <% else %>
             One number of secret code is: <%= session_data(:hint) %>

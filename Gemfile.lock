@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/AlexTua/codebreaker.git
+  revision: af2f3806ba0e1bb8b6ce7c8fc1202012bbbe58f3
+  specs:
+    codebreaker (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -21,6 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  codebreaker!
   rack
   rspec
 
