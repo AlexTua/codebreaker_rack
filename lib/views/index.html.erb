@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codebreaker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/application.css" type="text/css">
+  </head>
+  <body>
+    <div id="container">
+      <h1 class = "title">Codebreaker</h1>
+      <div id="info-container">
+        <p>Attempts left: <%= @game.attempts %></p>
+        <p>Your guess: <%= session_data(:guess) %></p>
+        <p>Answer: <%= session_data(:answer) %></p>
+      </div>
+      <div id="game-container" align="center">
+        <% if session_data(:answer) == '++++' %>
+          You win!<br>
+          Would you like to save your result?
+          <form method="post" action="/save">
+            <input type="text" name="name" class="text" placeholder = "Enter your name..." required autofocus>
+            <input type="submit" value="Save" class="btn">
+          </form>
+        <% elsif @game.attempts == 0 %>
+          You lose<br>
+          Secret code was: <%= @game.to_h[:secret_code] %>
+        <% else %>
+          <form method="post" action="/check_guess">
+            <input type="text" name="guess" class="text" placeholder = "Enter your guess..." pattern="[1-6]{4,}" maxlength="4" required autofocus>
+            <input type="submit" value="Try" class="btn btn-try">
+          </form>
+          <% if @request.session['hint'].nil? %>
+            <form method="post" action="/hint">
+              <button type="submit" value="Hint" class="btn">Hint <img src="stylesheets/1.png" style="vertical-align:middle"> 
+              </button>
+            </form>
+          <% else %>
+            One number of secret code is: <%= session_data(:hint) %>
+          <% end %>
+        <% end %>
+        <form method="post" action="/restart">
+          <input type="submit" value="Restart" class="btn">
+        </form>
+      </div>
+      <div id="records-container">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Secret code</th>
+            <th>Attempts used</th>
+            <th>Hints used</th>
+          </tr>
+          <% sorted_records.each do |record| %>
+            <tr>
+              <td><%= record[:name] %></td>
+              <td><%= record[:secret_code] %></td>
+              <td><%= record[:attempts_used] %></td>
+              <td><%= record[:hints_used] %></td> 
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+- :secret_code: '3216'
+  :attempts_used: 1
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Vasily
+- :secret_code: '1114'
+  :attempts_used: 3
+  :hints_used: 1
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Ivan
+- :secret_code: '2322'
+  :attempts_used: 1
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Greg
+- :secret_code: '3536'
+  :attempts_used: 5
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Anonymous
