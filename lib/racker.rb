@@ -12,6 +12,15 @@ class Racker
     @game = game
   end
 
+  def sorted_records
+    return [] unless records
+    records.sort_by { |record| record[:attempts_used] }
+  end
+
+  def session_data(data)
+    @request.session[data]
+  end
+
   def response
     case @request.path
       when '/' then Rack::Response.new(render('index.html.erb'))
@@ -22,6 +31,8 @@ class Racker
       else Rack::Response.new('Not Found', 404)
     end
   end
+
+  private
 
   def render(template)
     path = File.expand_path("../views/#{template}", __FILE__)
@@ -67,18 +78,9 @@ class Racker
     YAML.load_file('records.yaml')
   end
 
-  def sorted_records
-    return [] unless records
-    records.sort_by { |record| record[:attempts_used] }
-  end 
-
   def redirect_to(path)
     Rack::Response.new do |response|
       response.redirect(path)
     end
-  end
-
-  def session_data(data)
-    @request.session[data]
   end
 end

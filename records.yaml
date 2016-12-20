@@ -29,3 +29,15 @@
   :attempts_number: 7
   :hints_number: 1
   :name: Alex
+- :secret_code: '3464'
+  :attempts_used: 6
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Valera
+- :secret_code: '1262'
+  :attempts_used: 6
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Leonid
