@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="container">
-      <h1 class = "title">Codebreaker <%= @game.to_h[:secret_code]%></h1>
+      <h1 class = "title">Codebreaker</h1>
       <div id="info-container">
         <p>Attempts left: <%= @game.attempts %></p>
         <p>Your guess: <%= session_data(:guess) %></p>
