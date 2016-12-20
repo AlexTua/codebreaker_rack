@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/AlexTua/codebreaker.git
-  revision: af2f3806ba0e1bb8b6ce7c8fc1202012bbbe58f3
+  revision: 2557e0246c4ff48e715b94c129f249982b59df8d
   specs:
     codebreaker (0.1.0)
 
@@ -30,6 +30,9 @@ DEPENDENCIES
   codebreaker!
   rack
   rspec
+
+RUBY VERSION
+   ruby 2.3.0p0
 
 BUNDLED WITH
    1.13.6

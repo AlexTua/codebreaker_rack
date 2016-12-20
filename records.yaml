@@ -23,3 +23,9 @@
   :attempts_number: 7
   :hints_number: 1
   :name: Anonymous
+- :secret_code: '1644'
+  :attempts_used: 5
+  :hints_used: 1
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Alex
