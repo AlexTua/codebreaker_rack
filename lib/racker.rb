@@ -10,6 +10,7 @@ class Racker
   def initialize(env)
     @request = Rack::Request.new(env)
     @game = game
+    @request.session[:turns] ||= {}
   end
 
   def sorted_records
@@ -23,11 +24,12 @@ class Racker
 
   def response
     case @request.path
-      when '/' then Rack::Response.new(render('index.html.erb'))
+      when '/'            then Rack::Response.new(render('index.html.erb'))
       when '/check_guess' then check_guess
-      when '/restart' then restart 
-      when '/hint' then hint 
-      when '/save' then save
+      when '/restart'     then restart 
+      when '/hint'        then hint 
+      when '/save'        then save
+      when '/records'     then show_records
       else Rack::Response.new('Not Found', 404)
     end
   end
@@ -45,7 +47,7 @@ class Racker
 
   def check_guess
     @request.session[:guess] = @request.params['guess']
-    @request.session[:answer] = @game.check_guess(@request.params['guess'])
+    @request.session[:turns][session_data(:guess)] = @game.check_guess(session_data(:guess))
     redirect_to('/')
   end
 
@@ -72,6 +74,10 @@ class Racker
       f.write(statistics.to_yaml)
     end
     redirect_to('/restart')
+  end
+
+  def show_records
+    Rack::Response.new(render('records.html.erb'))
   end
 
   def records

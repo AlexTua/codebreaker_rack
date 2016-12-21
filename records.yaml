@@ -41,3 +41,9 @@
   :attempts_number: 7
   :hints_number: 1
   :name: Leonid
+- :secret_code: '4645'
+  :attempts_used: 7
+  :hints_used: 0
+  :attempts_number: 7
+  :hints_number: 1
+  :name: Ubuntu

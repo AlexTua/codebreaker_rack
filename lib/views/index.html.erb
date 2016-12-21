@@ -7,14 +7,17 @@
   </head>
   <body>
     <div id="container">
+      <nav>
+        <div class="nav-game selected"><a href="/">Game</a></div><div class="nav-records"><a href="/records">Records</a></div>
+      </nav>
       <h1 class = "title">Codebreaker</h1>
       <div id="info-container">
         <p>Attempts left: <%= @game.attempts %></p>
         <p>Your guess: <%= session_data(:guess) %></p>
-        <p>Answer: <%= session_data(:answer) %></p>
+        <p>Answer: <%= session_data(:turns)[session_data(:guess)] %></p>
       </div>
       <div id="game-container" align="center">
-        <% if session_data(:answer) == '++++' %>
+        <% if session_data(:turns)[session_data(:guess)] == '++++' %>
           You win!<br>
           Would you like to save your result?
           <form method="post" action="/save">
@@ -43,18 +46,15 @@
       </div>
       <div id="records-container">
         <table>
+          <caption>TURNS</caption>
           <tr>
-            <th>Name</th>
-            <th>Secret code</th>
-            <th>Attempts used</th>
-            <th>Hints used</th>
+            <th>Guess</th>
+            <th>Answer</th>
           </tr>
-          <% sorted_records.each do |record| %>
+          <% @request.session[:turns].each_pair do |guess, answer| %>
             <tr>
-              <td><%= record[:name] %></td>
-              <td><%= record[:secret_code] %></td>
-              <td><%= record[:attempts_used] %></td>
-              <td><%= record[:hints_used] %></td> 
+              <td><%= guess %></td>
+              <td><%= answer %></td>
             </tr>
           <% end %>
         </table>

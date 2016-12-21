@@ -93,6 +93,7 @@ th {
   color: #F9C941;
   border-right: 2px solid; 
   font-size: 0.9em;
+  width: 20%;
 }
 
 th:last-child {
@@ -100,6 +101,7 @@ th:last-child {
 }
 
 td {
+  width: 20%;
   vertical-align: middle;
   padding: 10px;
   font-size: 20px;
@@ -115,4 +117,33 @@ td:first-child {
 
 tr {
   text-align: center;
+}
+
+caption {
+  font-size: 30pt;
+}
+
+nav {
+  border: 2px solid #56433D;
+  border-bottom: 0;
+}
+
+nav div {
+  display: inline-block;
+  text-align: center;
+  border-bottom: 2px solid #56433D;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.nav-game {
+  width: 50%;
+  border-right: 2px solid #56433D;}
+
+.nav-records {
+  width: 346px;
+}
+
+.selected {
+  background-color: #fff;
 }
