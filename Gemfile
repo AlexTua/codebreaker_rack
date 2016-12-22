@@ -5,3 +5,4 @@ ruby '2.3.0'
 gem 'rack'
 gem 'rspec'
 gem 'codebreaker', git: 'git://github.com/AlexTua/codebreaker.git'
+gem "capybara"

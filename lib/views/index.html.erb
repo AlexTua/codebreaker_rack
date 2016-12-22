@@ -8,7 +8,8 @@
   <body>
     <div id="container">
       <nav>
-        <div class="nav-game selected"><a href="/">Game</a></div><div class="nav-records"><a href="/records">Records</a></div>
+        <div class="nav-game selected">
+        <a href="/">Game</a></div><div class="nav-records"><a href="/records">Records</a></div>
       </nav>
       <h1 class = "title">Codebreaker</h1>
       <div id="info-container">
@@ -33,16 +34,12 @@
             <input type="submit" value="Try" class="btn btn-try">
           </form>
           <% if @request.session['hint'].nil? %>
-            <form method="post" action="/hint">
-              <button type="submit" value="Hint" class="btn">Hint</button>
-            </form>
+              <a href="/hint"><button type="submit" formaction="/hint" class="btn">Hint</button></a><br>
           <% else %>
-            One number of secret code is: <%= session_data(:hint) %>
+            One number of secret code is: <%= session_data(:hint) %><br>
           <% end %>
         <% end %>
-        <form method="post" action="/restart">
-          <input type="submit" value="Restart" class="btn">
-        </form>
+        <a href="/restart"><button type="submit" class="btn">Restart</button></a>
       </div>
       <div id="records-container">
         <table>
