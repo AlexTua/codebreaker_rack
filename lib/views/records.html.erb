@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codebreaker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/application.css" type="text/css">
+  </head>
+  <body>
+    <div id="container">
+      <nav>
+        <div class="nav-game"><a href="/">Game</a></div><div class="nav-records selected"><a href="/records">Records</a></div>
+      </nav>
+      <h1 class = "title">Codebreaker</h1>
+      <div id="records-container">
+        <table>
+          <caption>RECORDS</caption>
+          <tr>
+            <th>Name</th>
+            <th>Secret code</th>
+            <th>Attempts used</th>
+            <th>Hints used</th>
+          </tr>
+          <% sorted_records.each do |record| %>
+            <tr>
+              <td><%= record[:name] %></td>
+              <td><%= record[:secret_code] %></td>
+              <td><%= record[:attempts_used] %></td>
+              <td><%= record[:hints_used] %></td> 
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

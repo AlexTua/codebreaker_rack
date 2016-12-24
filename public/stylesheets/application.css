@@ -1,0 +1,149 @@
+body {
+  background-image: url(/stylesheets/background.png);
+  font-family: Verdana;
+  font-size: 20px;
+}
+
+#container {
+  width: 700px;
+  margin: auto;
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+
+#game-container {
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+  display:inline-block;
+}
+
+#info-container {
+  border: 2px solid #39c;
+  border-radius: 20px;
+  padding: 5px;
+  width: 190px;
+  background: #F5F5F5;
+  display:inline-block;
+  margin-left: 30px;
+}
+
+#records-container {
+  margin-top: 40px;
+}
+
+.btn {
+  width: 90px; 
+  height: 30px;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 0 1px 0 #757575;
+  padding: 3px 0 5px 0;
+  margin: 0;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  margin-top: 7px;
+  background: linear-gradient(to bottom, #2d72e2 0%,#2e71dd 100%);
+  border-top: 1px solid #0766ff;
+  border-right: 1px solid #0b52c4;
+  border-left: 1px solid #0b52c4;
+  border-bottom: 1px solid #0b52c4;
+  box-shadow: 0 -1px 0 #0b52c4, 0 1px 0 #fff;
+}
+
+.btn-try {
+  background: linear-gradient(to bottom, #0bc408 0%,#09a206 100%);
+  border-top: 1px solid #87c286;
+  border-right: 1px solid #0e780c;
+  border-left: 1px solid #0e780c;
+  border-bottom: 1px solid #0e780c;
+  box-shadow: 0 -1px 0 #0e780c, 0 1px 0 #fff;
+  padding: 6px 0 5px 0;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 70px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+input.text {
+  width:  200px;
+  height: 18px;
+  padding: 5px 10px 5px 10px;
+  margin: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+input.text:focus {
+  border: 1px solid #39c; 
+}
+
+table {
+  margin: auto;
+  border-spacing: 0 10px;
+}
+
+th {
+  padding: 10px 20px;
+  background: #56433D;
+  color: #F9C941;
+  border-right: 2px solid; 
+  font-size: 0.9em;
+  width: 20%;
+}
+
+th:last-child {
+  border-right: none;
+}
+
+td {
+  width: 20%;
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border-top: 2px solid #56433D;
+  border-bottom: 2px solid #56433D;
+  border-right: 2px solid #56433D;
+}
+
+td:first-child {
+  border-left: 2px solid #56433D;
+}
+
+tr {
+  text-align: center;
+}
+
+caption {
+  font-size: 30pt;
+}
+
+nav {
+  border: 2px solid #56433D;
+  border-bottom: 0;
+}
+
+nav div {
+  display: inline-block;
+  text-align: center;
+  border-bottom: 2px solid #56433D;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.nav-game {
+  width: 50%;
+  border-right: 2px solid #56433D;}
+
+.nav-records {
+  width: 346px;
+}
+
+.selected {
+  background-color: #fff;
+}
